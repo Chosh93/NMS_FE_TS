@@ -2,33 +2,36 @@ import React, { useState, useEffect } from "react";
 import MonitorApi from "../api/MonitorApi";
 
 interface MonitoringData {
-    cpuCost: number;
+    cpuUsage: number;
+    memoryUsage: number;
+
 }
 
 const Monitoring:React.FC = () => {
-    const [monitoringData, setMonitoringData] = useState<MonitoringData>({ cpuCost: 0 });
+    const [monitoringData, setMonitoringData] = useState<MonitoringData>({ cpuUsage: 0, memoryUsage: 0 });
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const response = await MonitorApi.startMonitoring();
                 setMonitoringData(response.data);
-                console.log(response.data);
             } catch (error) {
                 console.error("Error fetching data:", error);
             }
         };
 
-        const interval = setInterval(fetchData, 3000);
+        const interval = setInterval(fetchData, 5000);
 
         // 컴포넌트가 언마운트될 때 interval을 정리합니다.
         return () => {
             clearInterval(interval);
         };
     }, []);
+
     return(
         <div>
-            <p>cpu : {monitoringData.cpuCost}</p>
+            <p>cpuUsage : {monitoringData.cpuUsage}</p>
+            <p>memoryUsage : {monitoringData.memoryUsage} </p>
         </div>
     )
 }
