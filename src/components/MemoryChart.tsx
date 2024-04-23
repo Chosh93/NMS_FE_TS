@@ -32,9 +32,8 @@ const MemoryChart: React.FC = () => {
     };
 
     return (
-        <div style={{ width: '400px', height: '400px' }}>
+        <div style={{ width: '300px', height: '300px' }}>
             <Doughnut data={data} options={chartOptions}/> 
-            <p>메모리 사용율 : {100-memoryUsage} %</p>
         </div>
     )
 }

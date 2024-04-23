@@ -12,9 +12,11 @@ const MonitorPage:React.FC = () => {
         <>
         <Seconds/>
         <Monitoring/>
-        <CpuChart/>
-        <MemoryChart/>
-        <DiskChart/>
+        <div>
+            <CpuChart/>
+            <MemoryChart/>
+            <DiskChart/>
+        </div>
         </>
     )
 }

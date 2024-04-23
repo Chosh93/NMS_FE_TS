@@ -31,7 +31,7 @@ const DiskChart: React.FC = () => {
     };
 
     return (
-        <div style={{ width: '400px', height: '400px' }}>
+        <div style={{ width: '300px', height: '300px' }}>
             <Doughnut data={data} options={chartOptions}/> 
         </div>
     )
