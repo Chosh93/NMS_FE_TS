@@ -14,7 +14,7 @@ const MainBoard:React.FC = () => {
     return (
         <div className="board-container">
             <div className="nav-contents">
-                <div className="nav">
+                <div className="navi">
                     <Navi/>
                 </div>
                 <div className="contents">
