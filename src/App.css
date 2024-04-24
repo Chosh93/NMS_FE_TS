@@ -1,13 +1,25 @@
+/* App.css */
 
-.mainHome-div {
-  width: 100vh;
-  height: 100vh;
+.nav-contents {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: ivory;
 }
 
-.mainHome-div button {
-  height: 50px;
+.contents {
+  width: 100%;
+  display: flex; /* 컨텐츠를 가로로 나란히 배치하기 위해 display 속성을 flex로 설정합니다. */
+  flex-direction: column;
+}
+
+.simple {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.charts {
+  width:100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }

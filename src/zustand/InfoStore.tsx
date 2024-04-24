@@ -6,6 +6,7 @@ interface SystemState {
     memoryTotal: number;
     diskTotal: number;
     diskUsable: number;
+    monitoringActive: boolean;
 }
 
 const initialState: SystemState =  {
@@ -13,7 +14,8 @@ const initialState: SystemState =  {
     memoryFree: 0,
     memoryTotal: 0,
     diskTotal: 0,
-    diskUsable: 0
+    diskUsable: 0,
+    monitoringActive: false
 }
 
 interface SystemStore extends SystemState {

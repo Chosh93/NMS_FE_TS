@@ -1,18 +1,18 @@
 import React from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
-import useSystemInfoStore from "../zustand/InfoStore";
+import useSystemInfoStore from "../../zustand/InfoStore";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const MemoryChart: React.FC = () => {
-    const { memoryFree, memoryTotal } = useSystemInfoStore();
-    const memoryUsage = Math.round(memoryFree/memoryTotal*100);
+const CpuChart: React.FC = () => {
+    const { cpuUsage } = useSystemInfoStore(); // cpuUsage와 memoryUsage 값 가져오기
+
     const data = {
         labels: ['사용중', '사용가능'],
         datasets:[
             {
-                data: [100-memoryUsage, memoryUsage],
+                data: [cpuUsage, 100-cpuUsage], // cpuUsage와 memoryUsage 값을 차트 데이터에 사용
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -38,4 +38,4 @@ const MemoryChart: React.FC = () => {
     )
 }
 
-export default MemoryChart;
+export default CpuChart;

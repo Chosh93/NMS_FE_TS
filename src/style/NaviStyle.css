@@ -1,0 +1,6 @@
+.nav {
+  width: 150px; /* 내비게이션 바의 너비 */
+  height: 100%; /* 화면 높이에 맞게 설정 */
+  background-color: #f8f9fa; /* 내비게이션 바의 배경색 */
+  padding: 20px; /* 내비게이션 바의 안쪽 여백 */
+}
