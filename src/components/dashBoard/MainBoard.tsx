@@ -5,8 +5,8 @@ import DiskBoard from "./DiskBoard";
 import NetworkBoard from "./NetworkBoark";
 import Navi from "../Navi";
 import "../../style/MainBoard.css";
-import CpuLineChart from "../charts/CpuLineChart";
-import LineAllChart from "../charts/LineAllChart";
+import CpuLineChart from "../charts/line/CpuLineChart";
+import LineAllChart from "../charts/line/LineAllChart";
 
 const MainBoard:React.FC = () => {
 
@@ -36,8 +36,13 @@ const MainBoard:React.FC = () => {
                                     <LineAllChart/>
                                 </div>
                             </div>
-                            <div>
-                                <CpuLineChart/>
+                            <div className="issue-col">
+                            <div className="allchart-header">
+                                    All Issue View
+                                </div>
+                                <div className="allchart-body">
+                                    <CpuLineChart/>
+                                </div>
                             </div>
                         </div>
                     </div>

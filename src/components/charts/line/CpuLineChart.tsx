@@ -11,8 +11,8 @@ import {
     ChartOptions,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import useSystemInfoStore from "../../zustand/InfoStore";
-import "../../style/LineChart.css";
+import useSystemInfoStore from "../../../zustand/InfoStore";
+import "../../../style/LineChart.css";
 
 ChartJS.register(
     CategoryScale,

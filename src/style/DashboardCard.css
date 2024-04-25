@@ -1,6 +1,6 @@
 /* DashboardCard CSS */
 .dashboard-card {
-    width: 15%;
+    width: 22%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
