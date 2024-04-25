@@ -2,7 +2,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    background-color: #212529;
+    color: white;
   }
   
   h1{
@@ -10,5 +11,10 @@
   }
   
   .monitoring-btn-container{
-    margin-right: 15px;
+    margin-right: 10%;
+  }
+
+  .monitoring-btn-container > button{
+    height: 30px;
+    color: #212529;
   }

@@ -12,14 +12,22 @@
 
 .simple {
   width: 100%;
+  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
-.charts {
+.donuts-charts {
   width:100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+
+.line-charts {
+  width: 578px;
+  height: 231px;
+}
+
+

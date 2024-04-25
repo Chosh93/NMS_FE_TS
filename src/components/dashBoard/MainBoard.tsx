@@ -8,6 +8,7 @@ import "../../App.css";
 import CpuChart from "../charts/CpuChart";
 import MemoryChart from "../charts/MemoryChart";
 import DiskChart from "../charts/DiskChart";
+import CpuLineChart from "../charts/CpuLineChart";
 
 const MainBoard:React.FC = () => {
 
@@ -18,17 +19,23 @@ const MainBoard:React.FC = () => {
                     <Navi/>
                 </div>
                 <div className="contents">
+                    <div className="title">
+                        <h1>Dashboard</h1>
+                    </div>
                     <div className="simple">
                         <CpuBoard/>
                         <MemoryBoard/>
                         <DiskBoard/>
                         <NetworkBoard/>
                     </div>
-                    <div className="charts">
+                    <div className="donuts-charts">
                         <CpuChart/>
                         <MemoryChart/>
                         <DiskChart/>
                         <CpuChart/>
+                    </div>
+                    <div className="line-charts">
+                        <CpuLineChart/>
                     </div>
                 </div>
             </div>

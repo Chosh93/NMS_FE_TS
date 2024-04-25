@@ -10,7 +10,7 @@ const Navi:React.FC = () => {
             <Link to="/" className="nav-link">Home</Link>
           </div>
           <div className="nav-item">
-            <Link to="/about" className="nav-link">About</Link>
+            <Link to="/about" className="nav-link">Dashboard</Link>
           </div>
           <div className="nav-item">
             <Link to="/contact" className="nav-link">Contact</Link>

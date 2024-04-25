@@ -6,7 +6,7 @@ const Header:React.FC = () => {
 
     return (
         <div className="container">
-            <h1>Dashboard</h1>
+            <h1>Monitoring</h1>
             <Monitoring />
         </div>
     )
