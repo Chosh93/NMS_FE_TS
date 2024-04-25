@@ -52,7 +52,7 @@ const CpuLineChart: React.FC = () => {
                 ]
             };
             setChartData(newChartData);
-        }, 5000); // 5초마다 실행
+        }, 4500); // 5초마다 실행
 
         return () => clearInterval(interval); // 컴포넌트가 언마운트되면 clearInterval
     }, [cpuUsage, chartData]);

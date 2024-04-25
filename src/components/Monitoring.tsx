@@ -18,12 +18,11 @@ const Monitoring:React.FC = () => {
             diskTotal: response.data.diskTotal,
             diskUsable: response.data.diskUsable,
           });
-          console.log(response.data);
         } catch (error) {
           console.error("Error fetching data:", error);
         }
       };
-      const interval = setInterval(fetchData, 5000);
+      const interval = setInterval(fetchData, 4500);
 
       return () => {
         clearInterval(interval);
