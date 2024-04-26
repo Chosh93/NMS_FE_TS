@@ -6,13 +6,12 @@ import useSystemInfoStore from "../../../zustand/InfoStore";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const MemoryChart: React.FC = () => {
-    const { memoryFree, memoryTotal } = useSystemInfoStore();
-    const memoryUsage = Math.round(memoryFree/memoryTotal*100);
+    const { memoryUsage } = useSystemInfoStore();
     const data = {
         labels: ['사용중', '사용가능'],
         datasets:[
             {
-                data: [100-memoryUsage, memoryUsage],
+                data: [memoryUsage, 100-memoryUsage],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',

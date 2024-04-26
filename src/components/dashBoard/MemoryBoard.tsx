@@ -4,9 +4,8 @@ import "../../style/DashboardCard.css";
 import { ArrowRight } from "react-bootstrap-icons";
 
 const MemoryBoard:React.FC = () => {
-    const {memoryTotal, memoryFree} = useSystemInfoStore();
-    const memoryUsage = 100 - Math.round(memoryFree/memoryTotal*100);
-
+    const {memoryUsage} = useSystemInfoStore();
+    
     return (
         <div className="dashboard-card">
             <div className="dashboard-card-body">

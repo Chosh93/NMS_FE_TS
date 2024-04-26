@@ -4,8 +4,7 @@ import "../../style/DashboardCard.css";
 import { ArrowRight } from "react-bootstrap-icons";
 
 const DiskBoard:React.FC = () => {
-    const {diskTotal, diskUsable} = useSystemInfoStore();
-    const diskUsage = 100 - Math.round(diskUsable/diskTotal*100);
+    const {diskUsage} = useSystemInfoStore();
 
     return (
         <div className="dashboard-card">

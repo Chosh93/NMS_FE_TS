@@ -6,12 +6,12 @@ import useSystemInfoStore from "../../../zustand/InfoStore";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const DiskChart: React.FC = () => {
-    const { diskTotal, diskUsable } = useSystemInfoStore();
+    const { diskUsage } = useSystemInfoStore();
     const data = {
         labels: ['사용중', '사용가능'],
         datasets:[
             {
-                data: [diskTotal-diskUsable, diskUsable],
+                data: [diskUsage, 100 - diskUsage],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',

@@ -7,6 +7,7 @@ import Navi from "../Navi";
 import "../../style/MainBoard.css";
 import CpuLineChart from "../charts/line/CpuLineChart";
 import LineAllChart from "../charts/line/LineAllChart";
+import TotalIssue from "../charts/bar/TotalIssue";
 
 const MainBoard:React.FC = () => {
 
@@ -41,7 +42,7 @@ const MainBoard:React.FC = () => {
                                     All Issue View
                                 </div>
                                 <div className="allchart-body">
-                                    <CpuLineChart/>
+                                    <TotalIssue/>
                                 </div>
                             </div>
                         </div>

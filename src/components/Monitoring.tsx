@@ -11,13 +11,23 @@ const Monitoring:React.FC = () => {
       const fetchData = async () => {
         try {
           const response = await MonitorApi.startMonitoring();
+          const issueResponse = await MonitorApi.systemIssue();
+          console.log(response);
+          console.log(issueResponse);
           set({
             cpuUsage: Math.round(response.data.cpuUsage),
             memoryFree: response.data.memoryFree,
             memoryTotal: response.data.memoryTotal,
+            memoryUsage: response.data.memoryUsage,
             diskTotal: response.data.diskTotal,
             diskUsable: response.data.diskUsable,
+            diskUsage: response.data.diskUsage,
+            cpuIssueCnt: issueResponse.data.issueCpuCount,
+            memoryIssueCnt: issueResponse.data.issueMemoryCount,
+            diskIssueCnt: issueResponse.data.issueDiskCount,
+            networkIssueCnt: issueResponse.data.issueNetworkCount
           });
+
         } catch (error) {
           console.error("Error fetching data:", error);
         }
