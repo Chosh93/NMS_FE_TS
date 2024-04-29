@@ -5,7 +5,6 @@ import DiskBoard from "./DiskBoard";
 import NetworkBoard from "./NetworkBoark";
 import Navi from "../Navi";
 import "../../style/MainBoard.css";
-import CpuLineChart from "../charts/line/CpuLineChart";
 import LineAllChart from "../charts/line/LineAllChart";
 import TotalIssue from "../charts/bar/TotalIssue";
 

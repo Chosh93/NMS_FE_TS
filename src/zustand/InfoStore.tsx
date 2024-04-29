@@ -1,6 +1,7 @@
 import { create, SetState } from "zustand";
 
 interface SystemState {
+    ipAddress: String;
     cpuUsage: number;
     memoryFree: number;
     memoryTotal: number;
@@ -8,6 +9,9 @@ interface SystemState {
     diskTotal: number;
     diskUsable: number;
     diskUsage: number;
+    inboundDiff: number;
+    outboundDiff: number;
+    networkUsage: number;
     monitoringActive: boolean;
     cpuIssueCnt: number;
     memoryIssueCnt: number;
@@ -16,6 +20,7 @@ interface SystemState {
 }
 
 const initialState: SystemState =  {
+    ipAddress: "",
     cpuUsage: 0,
     memoryFree: 0,
     memoryTotal: 0,
@@ -23,6 +28,9 @@ const initialState: SystemState =  {
     diskTotal: 0,
     diskUsable: 0,
     diskUsage: 0,
+    inboundDiff: 0,
+    outboundDiff: 0,
+    networkUsage: 0,
     monitoringActive: false,
     cpuIssueCnt: 0,
     memoryIssueCnt: 0,

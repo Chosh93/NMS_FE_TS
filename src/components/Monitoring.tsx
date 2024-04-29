@@ -4,7 +4,7 @@ import useSystemInfoStore from "../zustand/InfoStore";
 import "../style/Header.css";
 
 const Monitoring:React.FC = () => {
-  const { monitoringActive, set } = useSystemInfoStore();
+  const {monitoringActive, set } = useSystemInfoStore();
   
   useEffect(() => {
     if (monitoringActive) {
@@ -12,9 +12,9 @@ const Monitoring:React.FC = () => {
         try {
           const response = await MonitorApi.startMonitoring();
           const issueResponse = await MonitorApi.systemIssue();
-          console.log(response);
-          console.log(issueResponse);
+          console.log(response.data);
           set({
+            ipAddress: response.data.IpAddress,
             cpuUsage: Math.round(response.data.cpuUsage),
             memoryFree: response.data.memoryFree,
             memoryTotal: response.data.memoryTotal,
@@ -22,6 +22,9 @@ const Monitoring:React.FC = () => {
             diskTotal: response.data.diskTotal,
             diskUsable: response.data.diskUsable,
             diskUsage: response.data.diskUsage,
+            inboundDiff: response.data.inboundDiff,
+            outboundDiff: response.data.outboundDiff,
+            networkUsage: Math.round(response.data.networkUsage),
             cpuIssueCnt: issueResponse.data.issueCpuCount,
             memoryIssueCnt: issueResponse.data.issueMemoryCount,
             diskIssueCnt: issueResponse.data.issueDiskCount,
