@@ -1,5 +1,6 @@
 import React from "react";
 import useSystemInfoStore from "../../zustand/InfoStore";
+import { Link } from "react-router-dom";
 import "../../style/DashboardCard.css";
 import { ArrowRight } from "react-bootstrap-icons";
 
@@ -15,7 +16,7 @@ const DiskBoard:React.FC = () => {
                 </div>
             </div>
             <div className="card-footer">
-                <a className="card-detail" href="#">View Details</a>
+                <Link className="card-detail" to="/disk">View Details</Link>
                 <svg focusable="false"><ArrowRight/></svg>
             </div>
         </div>

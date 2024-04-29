@@ -31,7 +31,7 @@ const CpuLineChart: React.FC = () => {
         datasets: [
             {
                 label: "CPU",
-                data: Array.from({ length: 12 }, () => 0), // 초기값은 0으로 설정
+                data: Array.from({ length: 12 }, () => 0),
                 border: 0.5,
                 borderColor: "rgb(255, 99, 132)",
                 backgroundColor: "rgba(255, 99, 132, 0.5)",
@@ -41,20 +41,19 @@ const CpuLineChart: React.FC = () => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            // cpuUsage에서 데이터를 가져와서 새로운 차트 데이터를 업데이트
             const newChartData = {
-                labels: chartData.labels, // labels는 고정된 값으로 유지
+                labels: chartData.labels,
                 datasets: [
                     {
                         ...chartData.datasets[0],
-                        data: [...chartData.datasets[0].data.slice(1), cpuUsage], // 새로운 데이터 추가
+                        data: [...chartData.datasets[0].data.slice(1), cpuUsage],
                     }
                 ]
             };
             setChartData(newChartData);
         }, 4500); // 5초마다 실행
 
-        return () => clearInterval(interval); // 컴포넌트가 언마운트되면 clearInterval
+        return () => clearInterval(interval);
     }, [cpuUsage, chartData]);
 
     const options: ChartOptions<'line'> = {
