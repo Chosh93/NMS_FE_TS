@@ -46,6 +46,9 @@ const MainBoard:React.FC = () => {
                             </div>
                         </div>
                     </div>
+                    <div className="issue-list">
+                        
+                    </div>
                 </div>
             </div>
         </div>

@@ -25,7 +25,7 @@ ChartJS.register(
 );
 
 const LineAllChart: React.FC = () => {
-    const { cpuUsage, memoryTotal, memoryFree, diskTotal, diskUsable } = useSystemInfoStore();
+    const { cpuUsage, memoryTotal, memoryFree, diskTotal, diskUsable, networkUsage } = useSystemInfoStore();
     
     const memoryUsage = 100 - Math.round(memoryFree/memoryTotal*100);
     const diskUsage = 100 - Math.round(diskUsable/diskTotal*100);
@@ -50,6 +50,12 @@ const LineAllChart: React.FC = () => {
                 data: Array.from({ length: 12 }, () => 0),
                 borderColor: "rgb(75, 192, 192)",
                 backgroundColor: "rgba(75, 192, 192, 0.5)",
+            },
+            {
+                label: "Network",
+                data: Array.from({ length: 12}, () => 0),
+                borderColor: "rgb(232, 220, 0)",
+                backgroundColor: "rgba(255, 242, 0, 0.5)",
             }
         ]
     });
@@ -70,13 +76,17 @@ const LineAllChart: React.FC = () => {
                     {
                         ...prevData.datasets[2],
                         data: [...prevData.datasets[2].data.slice(1), diskUsage],
-                    }
+                    },
+                    {
+                        ...prevData.datasets[3],
+                        data: [...prevData.datasets[3].data.slice(1), networkUsage],
+                    },
                 ]
             }));
         }, 4500);
 
         return () => clearInterval(interval);
-    }, [cpuUsage, memoryUsage, diskUsage]);
+    }, [cpuUsage, memoryUsage, diskUsage, networkUsage]);
 
     const options: ChartOptions<'line'> = {
         responsive: true,
