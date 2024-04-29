@@ -9,6 +9,10 @@ const MonitorApi = {
 
     systemIssue: async() => {
         return await axios.get(Domain + "/system-issue");
+    },
+
+    cpuInfo: async() => {
+        return await axios.get(Domain + "/cpu-info");
     }
 }
 

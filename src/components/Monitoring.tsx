@@ -12,7 +12,6 @@ const Monitoring:React.FC = () => {
         try {
           const response = await MonitorApi.startMonitoring();
           const issueResponse = await MonitorApi.systemIssue();
-          console.log(response.data);
           set({
             ipAddress: response.data.IpAddress,
             cpuUsage: Math.round(response.data.cpuUsage),

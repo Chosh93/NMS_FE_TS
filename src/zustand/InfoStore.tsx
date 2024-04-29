@@ -17,6 +17,8 @@ interface SystemState {
     memoryIssueCnt: number;
     diskIssueCnt: number;
     networkIssueCnt: number;
+    cpuModel: String;
+    cpuCores: number;
 }
 
 const initialState: SystemState =  {
@@ -35,7 +37,9 @@ const initialState: SystemState =  {
     cpuIssueCnt: 0,
     memoryIssueCnt: 0,
     diskIssueCnt: 0,
-    networkIssueCnt: 0
+    networkIssueCnt: 0,
+    cpuModel: "",
+    cpuCores: 0,
 }
 
 interface SystemStore extends SystemState {

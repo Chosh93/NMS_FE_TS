@@ -2,7 +2,7 @@ import React from "react";
 import CpuBoard from "./CpuBoard";
 import MemoryBoard from "./MemoryBoard";
 import DiskBoard from "./DiskBoard";
-import NetworkBoard from "./NetworkBoark";
+import NetworkBoard from "./NetworkBoard";
 import Navi from "../Navi";
 import "../../style/MainBoard.css";
 import LineAllChart from "../charts/line/LineAllChart";
@@ -47,7 +47,7 @@ const MainBoard:React.FC = () => {
                         </div>
                     </div>
                     <div className="issue-list">
-                        
+
                     </div>
                 </div>
             </div>
